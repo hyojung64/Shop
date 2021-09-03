@@ -25,7 +25,18 @@ public class Shop {
 
     }
 
-
+    @PrePersist
+    public void onPrePersist()
+    {
+        try{
+            Thread.currentThread().sleep((long) (400+Math.random()*220));
+        }
+        catch(InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+    }
+    
     public Long getId() {
         return id;
     }
